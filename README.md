@@ -34,11 +34,13 @@ Auto-Editor is an AI-powered video editing application that automatically proces
 ### Backend Setup
 
 1. Navigate to the backend directory:
+
    ```
    cd backend
    ```
 
 2. Create a virtual environment:
+
    ```
    python -m venv .venv
    ```
@@ -48,32 +50,39 @@ Auto-Editor is an AI-powered video editing application that automatically proces
    - macOS/Linux: `source .venv/bin/activate`
 
 4. Install dependencies:
+
    ```
    pip install -r requirements.txt
    ```
 
 5. Copy the example environment file and configure your variables:
+
    ```
    cp .env.example .env
    ```
+
    Then edit `.env` and add your Gemini API key.
 
 ### Frontend Setup
 
 1. Navigate to the frontend directory:
+
    ```
    cd frontend
    ```
 
 2. Install dependencies:
+
    ```
    npm install
    ```
 
 3. Copy the example environment file and configure:
+
    ```
    cp .env.local.example .env.local
    ```
+
    Then edit `.env.local` and add your Supabase credentials.
 
 ## Running the Application
@@ -92,21 +101,23 @@ cd frontend
 npm run dev
 ```
 
-Access the application at: http://localhost:3000
+Access the application at: <http://localhost:3000>
 
 ## Environment Variables
 
 ### Backend
+
 - `GEMINI_API_KEY`: Your Google Gemini API key
 - `PORT`: Server port (default: 5000)
 - `HOST`: Server host (default: 0.0.0.0)
 - `USE_GPU`: Enable GPU acceleration (default: true)
 
 ### Frontend
-- `NEXT_PUBLIC_API_URL`: URL of the backend API (default: http://localhost:5000)
+
+- `NEXT_PUBLIC_API_URL`: URL of the backend API (default: <http://localhost:5000>)
 - `NEXT_PUBLIC_SUPABASE_URL`: Your Supabase project URL
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY`: Your Supabase anonymous key
 
 ## License
 
-[MIT License](LICENSE) 
+[MIT License](LICENSE)
