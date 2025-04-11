@@ -1,0 +1,181 @@
+/* How It Works Component Styles */
+
+.how-it-works-container {
+  position: relative;
+  padding: 20px 0;
+}
+
+.how-it-works-heading {
+  margin-bottom: 1.5rem;
+}
+
+.step-flow-container {
+  margin-top: 2rem;
+  position: relative;
+}
+
+.step-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+  height: 100%;
+  position: relative;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.step-number {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: white;
+}
+
+.step-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.step-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.step-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}
+
+/* Step arrows positioning - Fixed for desktop */
+.step-arrows {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none; /* Allow clicks to pass through */
+  z-index: 2;
+}
+
+.step-arrow-container {
+  position: absolute;
+  top: 35%; /* Align with the step icons */
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Position arrows between cards */
+.arrow-position-0 {
+  left: 23%; /* Positioned after first card */
+}
+
+.arrow-position-1 {
+  left: 48%; /* Positioned after second card */
+}
+
+.arrow-position-2 {
+  left: 73%; /* Positioned after third card */
+}
+
+/* Horizontal pulsing animation for desktop arrows */
+.step-arrow-icon {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.3));
+  animation: arrow-pulse 2s infinite ease-in-out;
+}
+
+@keyframes arrow-pulse {
+  0% { transform: translateX(0); opacity: 0.7; }
+  50% { transform: translateX(5px); opacity: 1; }
+  100% { transform: translateX(0); opacity: 0.7; }
+}
+
+/* Mobile arrow styling */
+.mobile-step-arrow {
+  font-size: 1.75rem;
+  margin: 1rem 0;
+  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.2));
+  animation: arrow-bounce 2s infinite ease-in-out;
+}
+
+@keyframes arrow-bounce {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+  100% { transform: translateY(0); }
+}
+
+/* Color classes for steps and arrows */
+.step-color-1 {
+  color: #60a5fa; /* Blue */
+}
+
+.step-color-2 {
+  color: #a78bfa; /* Purple */
+}
+
+.step-color-3 {
+  color: #f87171; /* Red */
+}
+
+.step-color-4 {
+  color: #34d399; /* Green */
+}
+
+.step-color-1-bg {
+  background: rgba(96, 165, 250, 0.2);
+  color: #60a5fa;
+}
+
+.step-color-2-bg {
+  background: rgba(167, 139, 250, 0.2);
+  color: #a78bfa;
+}
+
+.step-color-3-bg {
+  background: rgba(248, 113, 113, 0.2);
+  color: #f87171;
+}
+
+.step-color-4-bg {
+  background: rgba(52, 211, 153, 0.2);
+  color: #34d399;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .step-card {
+    margin-bottom: 1rem;
+  }
+  
+  .mobile-step-arrow {
+    margin: 0.75rem 0 1.5rem;
+  }
+} 

@@ -1,0 +1,6474 @@
+/* Additional animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glow {
+  0% { text-shadow: 0 0 5px rgba(79, 70, 229, 0.3); }
+  50% { text-shadow: 0 0 20px rgba(79, 70, 229, 0.6); }
+  100% { text-shadow: 0 0 5px rgba(79, 70, 229, 0.3); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes float-reverse {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(20px) rotate(-5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes pulse-bg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes pulse-dot {
+  0% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.5); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.7; }
+}
+
+/* Main Content Layout */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding-top: 2rem;
+}
+
+/* Page Sections */
+.page-section {
+  scroll-margin-top: 90px;
+  margin-bottom: 2.5rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    rgba(79, 70, 229, 0.5) 0%, 
+    rgba(99, 102, 241, 1) 50%, 
+    rgba(79, 70, 229, 0.5) 100%);
+  border-radius: 3px;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* Upload Section */
+.upload-section {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.upload-section h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glow 3s infinite;
+  position: relative;
+  display: inline-block;
+}
+
+.upload-section h1 .highlight {
+  background: linear-gradient(135deg, #4f46e5 0%, #818cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+.upload-section h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    rgba(79, 70, 229, 0.5) 0%, 
+    rgba(99, 102, 241, 1) 50%, 
+    rgba(79, 70, 229, 0.5) 100%);
+  border-radius: 3px;
+}
+
+/* How It Works Section - Styled to match Features Section */
+.how-it-works-section {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.how-it-works-card {
+  border: none;
+  overflow: hidden;
+}
+
+.how-it-works-container {
+  padding: 1rem;
+}
+
+.how-it-works-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+  position: relative;
+  display: inline-block;
+}
+
+.how-it-works-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    rgba(79, 70, 229, 0.5) 0%, 
+    rgba(99, 102, 241, 1) 50%, 
+    rgba(79, 70, 229, 0.5) 100%);
+  border-radius: 3px;
+}
+
+.step-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+  height: 100%;
+  position: relative;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.step-number {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: white;
+}
+
+.step-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.step-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.step-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}
+
+/* Step colors - matching the existing color scheme */
+.step-color-1 {
+  color: var(--accent-color-1);
+}
+
+.step-color-2 {
+  color: var(--accent-color-2);
+}
+
+.step-color-3 {
+  color: var(--accent-color-3);
+}
+
+.step-color-4 {
+  color: var(--accent-color-4);
+}
+
+.step-color-1-bg {
+  background-color: var(--accent-color-1);
+}
+
+.step-color-2-bg {
+  background-color: var(--accent-color-2);
+}
+
+.step-color-3-bg {
+  background-color: var(--accent-color-3);
+}
+
+.step-color-4-bg {
+  background-color: var(--accent-color-4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .step-card {
+    padding: 1.25rem;
+  }
+  
+  .step-icon {
+    font-size: 2rem;
+  }
+  
+  .step-title {
+    font-size: 1.1rem;
+  }
+  
+  .step-desc {
+    font-size: 0.9rem;
+  }
+}
+
+/* Features Section */
+.features-section {
+  animation: fadeIn 0.6s ease-out;
+  animation-delay: 0.2s;
+  animation-fill-mode: both;
+}
+
+/* Call to Action Section */
+.cta-section {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  animation: fadeIn 0.6s ease-out;
+  animation-delay: 0.3s;
+  animation-fill-mode: both;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main-content {
+    gap: 3rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+  }
+  
+  .upload-section h1 {
+    font-size: 2.5rem;
+  }
+  
+  .page-section {
+    scroll-margin-top: 100px;
+  }
+}
+
+@media (max-width: 576px) {
+  .main-content {
+    gap: 2.5rem;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+  }
+  
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .upload-section h1 {
+    font-size: 2rem;
+  }
+  
+  .page-section {
+    scroll-margin-top: 80px;
+  }
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+body {
+  font-family: var(--font-inter), sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Background animation */
+.bg-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.bg-animation::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(15, 23, 42, 0.7) 0%, rgba(15, 23, 42, 0.9) 100%);
+  z-index: -1;
+}
+
+/* Floating elements */
+.floating-element {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  z-index: -1;
+}
+
+.floating-element-1 {
+  width: 500px;
+  height: 500px;
+  top: 10%;
+  left: 5%;
+  background: radial-gradient(circle at center, rgba(79, 70, 229, 0.15) 0%, rgba(79, 70, 229, 0.05) 70%);
+  animation: float 25s infinite ease-in-out;
+}
+
+.floating-element-2 {
+  width: 400px;
+  height: 400px;
+  bottom: 10%;
+  right: 5%;
+  background: radial-gradient(circle at center, rgba(99, 102, 241, 0.15) 0%, rgba(99, 102, 241, 0.05) 70%);
+  animation: float-reverse 20s infinite ease-in-out;
+}
+
+.floating-element-3 {
+  width: 300px;
+  height: 300px;
+  top: 40%;
+  right: 15%;
+  background: radial-gradient(circle at center, rgba(168, 85, 247, 0.1) 0%, rgba(168, 85, 247, 0.03) 70%);
+  animation: float 30s infinite ease-in-out;
+}
+
+.floating-element-4 {
+  width: 250px;
+  height: 250px;
+  bottom: 30%;
+  left: 15%;
+  background: radial-gradient(circle at center, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0.03) 70%);
+  animation: float-reverse 22s infinite ease-in-out;
+}
+
+main {
+  animation: fadeIn 0.8s ease-out;
+  position: relative;
+  z-index: 1;
+  margin-top: 80px;
+}
+
+/* Single page layout */
+.single-page-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100vh - 4rem);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Glass card effect */
+.glass-card {
+  background: rgba(30, 41, 59, 0.7) !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25) !important;
+  transition: all 0.4s ease;
+  border-radius: 16px !important;
+  overflow: hidden;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* Header and navigation */
+.app-header {
+  background: rgba(15, 23, 42, 0.95);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  height: 75px;
+  display: flex;
+  align-items: center;
+  will-change: transform;
+  contain: layout;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Subtle gradient line at bottom of header */
+.app-header:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    rgba(79, 70, 229, 0) 0%, 
+    rgba(79, 70, 229, 0.5) 50%, 
+    rgba(79, 70, 229, 0) 100%);
+}
+
+/* Header container with consistent spacing and centering */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Header sections with better proportions */
+.header-section {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.header-left {
+  flex: 1;
+  justify-content: flex-start;
+}
+
+.header-center {
+  flex: 2;
+  justify-content: center;
+}
+
+.header-right {
+  flex: 1;
+  justify-content: flex-end;
+}
+
+/* Header action button */
+.header-btn {
+  padding: 0.6rem 1.4rem; /* Slightly adjusted padding */
+  border-radius: 10px; /* Consistent border-radius */
+  font-weight: 500;
+  text-decoration: none;
+  transition: var(--transition-standard);
+  position: relative;
+  overflow: hidden;
+  color: var(--text-primary); /* Use primary text color */
+  border: 1px solid var(--text-secondary); /* Add a subtle border */
+  box-shadow: none; /* Remove base shadow */
+  background: transparent; /* Make background transparent */
+  display: inline-flex; /* Ensure icon and text align well if icons added */
+  align-items: center;
+  justify-content: center;
+  z-index: 1; /* Ensure it's above pseudo-elements */
+}
+
+.header-btn:hover {
+  box-shadow: none; /* Keep shadow off */
+  background: rgba(255, 255, 255, 0.05); /* Subtle background on hover */
+  color: white; /* Keep text white on hover */
+  border-color: white; /* Highlight border on hover */
+}
+
+.header-btn:active {
+  transform: translateY(0);
+  background: rgba(255, 255, 255, 0.1); /* Slightly darker background on active */
+}
+
+.logo-text {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.02em;
+  position: relative;
+}
+
+.logo-text:after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+  bottom: 5px;
+  right: -12px;
+  box-shadow: 0 0 10px var(--primary);
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+
+.logo-text .highlight {
+  background: linear-gradient(135deg, #4f46e5 0%, #818cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Navigation links with consistent sizing and positioning */
+.nav-links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 2.5rem; /* Increased gap between nav items */
+}
+
+.nav-links li {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.nav-links li a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  position: relative;
+  padding: 0 0.25rem;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  font-size: 1rem; /* Fixed font size */
+  letter-spacing: 0.01em;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: var(--text-primary);
+}
+
+/* Remove scale transform to prevent layout shift */
+.nav-links li a:active {
+  color: var(--primary);
+}
+
+/* Consistent underline effect */
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  bottom: -6px; /* Position below the text */
+  left: 0;
+  width: 100%;
+  height: 3px; /* Thicker underline */
+  background: var(--gradient-primary); /* Use primary gradient */
+  border-radius: 2px;
+  opacity: 0;
+  transform: scaleX(0.5);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+   opacity: 0.7; /* Slight indicator on hover */
+   transform: scaleX(1);
+}
+
+/* Keep underline height consistent on click */
+.nav-links li a:active::after {
+  width: 100%;
+  opacity: 1;
+}
+
+/* Mobile Navigation */
+.mobile-nav-toggle {
+  position: relative;
+  z-index: 101;
+  height: 44px;
+  width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-toggle-input {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  cursor: pointer;
+  position: relative;
+  z-index: 102;
+  padding: 12px;
+  margin: -12px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.nav-toggle-label:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.nav-toggle-label:active {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: none;
+}
+
+.hamburger-line {
+  display: block;
+  height: 2px;
+  width: 100%;
+  border-radius: 10px;
+  background: var(--text-primary);
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-toggle-input:checked + .nav-toggle-label .hamburger-line:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.nav-toggle-input:checked + .nav-toggle-label .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle-input:checked + .nav-toggle-label .hamburger-line:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 75px;
+  right: -100%;
+  width: 100%;
+  height: calc(100vh - 75px);
+  background: var(--bg-dark);
+  z-index: 1000;
+  transition: right 0.3s ease-in-out, opacity 0.2s ease-in-out;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-y: auto;
+  opacity: 0;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Removing scrolled styles */
+
+.mobile-menu.open {
+  right: 0;
+  opacity: 1;
+}
+
+/* Mobile menu links styling */
+.mobile-nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.mobile-nav-links li {
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.nav-toggle-input:checked ~ .mobile-menu .mobile-nav-links li {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: calc(0.1s * var(--i, 0));
+}
+
+.mobile-nav-links li:nth-child(1) {
+  --i: 1;
+}
+
+.mobile-nav-links li:nth-child(2) {
+  --i: 2;
+}
+
+.mobile-nav-links li:nth-child(3) {
+  --i: 3;
+}
+
+.mobile-nav-links li:nth-child(4) {
+  --i: 4;
+}
+
+.mobile-nav-links li a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  display: block;
+  padding: 0.75rem 1rem;
+  transition: all 0.2s ease;
+  position: relative;
+  border-radius: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.mobile-nav-links li a:hover {
+  color: var(--text-primary);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.mobile-nav-links li a:active {
+  transform: scale(0.98);
+  color: var(--primary);
+  background-color: rgba(79, 70, 229, 0.1);
+}
+
+.mobile-nav-links li a.active {
+  color: var(--primary);
+  font-weight: 600;
+  position: relative;
+  background-color: rgba(79, 70, 229, 0.08);
+  border-left: 3px solid var(--primary);
+}
+
+.mobile-cta {
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.9) 0%, rgba(99, 102, 241, 0.9) 100%);
+  border-radius: 8px;
+  padding: 0.75rem !important;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+  color: white !important;
+  font-weight: 600 !important;
+  margin-top: 1rem;
+}
+
+.mobile-cta:hover {
+  background: linear-gradient(135deg, rgba(79, 70, 229, 1) 0%, rgba(99, 102, 241, 1) 100%);
+  box-shadow: 0 6px 15px rgba(79, 70, 229, 0.4);
+}
+
+.mobile-cta:active {
+  transform: scale(0.98) !important;
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.5);
+}
+
+/* Responsive header adjustments */
+@media (max-width: 768px) {
+  .header-container {
+    height: 70px;
+  }
+  
+  .header-left {
+    flex: 2;
+  }
+  
+  .header-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  /* Prevent clicks from causing movement */
+  .nav-toggle-label:active {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: none;
+  }
+}
+
+/* Hero section */
+.hero-section {
+  padding: 3rem 0 4rem;
+}
+
+.title-section {
+  margin-bottom: 4rem;
+}
+
+.title-section h1 {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glow 3s infinite;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.title-section h1 .highlight {
+  background: linear-gradient(135deg, #4f46e5 0%, #818cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto;
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+/* Debug button styling */
+.debug-section {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--dark-border);
+}
+
+.debug-button {
+  opacity: 0.7;
+  font-size: 0.85rem;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.debug-button:hover {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Dynamic progress bar width classes */
+.progress-bar-width-0 { width: 0%; }
+.progress-bar-width-5 { width: 5%; }
+.progress-bar-width-10 { width: 10%; }
+.progress-bar-width-15 { width: 15%; }
+.progress-bar-width-20 { width: 20%; }
+.progress-bar-width-25 { width: 25%; }
+.progress-bar-width-30 { width: 30%; }
+.progress-bar-width-35 { width: 35%; }
+.progress-bar-width-40 { width: 40%; }
+.progress-bar-width-45 { width: 45%; }
+.progress-bar-width-50 { width: 50%; }
+.progress-bar-width-55 { width: 55%; }
+.progress-bar-width-60 { width: 60%; }
+.progress-bar-width-65 { width: 65%; }
+.progress-bar-width-70 { width: 70%; }
+.progress-bar-width-75 { width: 75%; }
+.progress-bar-width-80 { width: 80%; }
+.progress-bar-width-85 { width: 85%; }
+.progress-bar-width-90 { width: 90%; }
+.progress-bar-width-95 { width: 95%; }
+.progress-bar-width-100 { width: 100%; }
+
+/* Download section */
+.download-section {
+  text-align: center;
+}
+
+.download-title {
+  font-size: 2.25rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.success-animation-container {
+  margin: 2rem 0;
+}
+
+.download-success-icon {
+  font-size: 5rem;
+  color: var(--success);
+  animation: glow 2s infinite;
+}
+
+.download-btn {
+  padding: 1.25rem 2.5rem;
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  background: linear-gradient(135deg, #4f46e5 0%, #818cf8 100%);
+  border: none;
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+  color: white;
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 1;
+  border-radius: 12px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.download-btn::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, #4f46e5 0%, #818cf8 100%);
+  z-index: -1;
+  border-radius: 14px;
+  opacity: 0;
+  transition: all 0.4s ease;
+  filter: blur(12px);
+}
+
+.download-btn:hover::after {
+  opacity: 0.8;
+}
+
+.download-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(79, 70, 229, 0.4);
+  background: linear-gradient(135deg, #4338ca 0%, #6366f1 100%);
+}
+
+.secondary-actions {
+  margin-top: 2rem;
+}
+
+.btn-outline-primary {
+  border-color: rgba(79, 70, 229, 0.5);
+  color: var(--text-primary);
+  background: rgba(79, 70, 229, 0.1);
+  transition: all 0.3s ease;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+}
+
+.btn-outline-primary:hover {
+  background: rgba(79, 70, 229, 0.2);
+  border-color: rgba(79, 70, 229, 0.8);
+  transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+  padding: 3rem 0 1rem;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: 4rem;
+}
+
+.footer-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.footer-text {
+  color: var(--text-secondary);
+  opacity: 0.8;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.copyright {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+/* Features section styling */
+.features-section {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.features-heading {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.feature-card {
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: rgba(51, 65, 85, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.4s ease;
+  height: 100%;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  background: rgba(51, 65, 85, 0.7);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon {
+  font-size: 2.25rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+  background: rgba(79, 70, 229, 0.15);
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  transition: all 0.4s ease;
+}
+
+.feature-card:hover .feature-icon {
+  background: rgba(79, 70, 229, 0.25);
+  transform: scale(1.1) rotate(5deg);
+}
+
+.feature-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.feature-desc {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .title-section h1 {
+    font-size: 3.5rem;
+  }
+  
+  .features-heading, .how-it-works-title {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .title-section h1 {
+    font-size: 2.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .feature-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.75rem;
+  }
+  
+  .features-heading, .how-it-works-title {
+    font-size: 1.75rem;
+  }
+  
+  .drop-zone {
+    padding: 2rem;
+  }
+  
+  .dropzone-icon {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .title-section h1 {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .feature-card {
+    padding: 1.25rem;
+  }
+  
+  .feature-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+  
+  .features-heading, .how-it-works-title {
+    font-size: 1.5rem;
+  }
+  
+  .drop-zone {
+    padding: 1.5rem;
+  }
+  
+  .dropzone-icon {
+    font-size: 2rem;
+  }
+}
+
+/* Form styling */
+.form-label-primary {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+}
+
+.form-label-primary svg {
+  color: var(--primary);
+  margin-right: 0.5rem;
+}
+
+.script-options-card {
+  background: rgba(51, 65, 85, 0.5) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.script-options-card:hover {
+  background: rgba(51, 65, 85, 0.7) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+.script-textarea {
+  background: rgba(51, 65, 85, 0.5) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: var(--text-primary) !important;
+  border-radius: 12px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.script-textarea:focus {
+  background: rgba(51, 65, 85, 0.7) !important;
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 0.25rem rgba(79, 70, 229, 0.25) !important;
+}
+
+.info-box {
+  background: rgba(51, 65, 85, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.info-box:hover {
+  background: rgba(51, 65, 85, 0.7);
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+.process-btn {
+  background: linear-gradient(135deg, #4f46e5 0%, #818cf8 100%);
+  border: none;
+  padding: 1.25rem 2rem;
+  font-weight: 600;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  letter-spacing: 0.01em;
+}
+
+.process-btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(79, 70, 229, 0.4);
+  background: linear-gradient(135deg, #4338ca 0%, #6366f1 100%);
+}
+
+.process-btn:disabled {
+  background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+  opacity: 0.7;
+}
+
+/* Form check styling */
+.form-check-input {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  width: 1.2em;
+  height: 1.2em;
+}
+
+.form-check-input:checked {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.form-check-label {
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* Dropzone styling */
+.drop-zone {
+  background: rgba(51, 65, 85, 0.5);
+  border: 2px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 2.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.drop-zone:hover {
+  background: rgba(51, 65, 85, 0.7);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-3px);
+}
+
+.drop-zone.active {
+  background: rgba(79, 70, 229, 0.15);
+  border-color: var(--primary);
+}
+
+.drop-zone.has-file {
+  background: rgba(79, 70, 229, 0.15);
+  border-color: var(--primary);
+  border-style: solid;
+}
+
+.dropzone-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropzone-icon {
+  font-size: 3rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.drop-zone:hover .dropzone-icon {
+  transform: scale(1.1);
+  color: var(--primary-light);
+}
+
+.dropzone-text {
+  color: var(--text-primary);
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.dropzone-hint {
+  color: var(--text-secondary);
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+  background: rgba(51, 65, 85, 0.7);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.file-info:hover {
+  background: rgba(51, 65, 85, 0.9);
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+.file-details {
+  flex-grow: 1;
+  margin-left: 1rem;
+}
+
+.file-name {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+  word-break: break-all;
+}
+
+.file-size {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  opacity: 0.8;
+}
+
+.file-type-icon {
+  font-size: 1.75rem;
+  color: var(--primary);
+  margin-right: 1rem;
+}
+
+.btn-close-custom {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+}
+
+.btn-close-custom:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+}
+
+.success-icon {
+  color: var(--success);
+}
+
+/* Call to action section */
+.cta-section {
+  position: relative;
+}
+
+.cta-card {
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.2) 0%, rgba(99, 102, 241, 0.2) 100%) !important;
+  border: 1px solid rgba(129, 140, 248, 0.2) !important;
+}
+
+.cta-title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.cta-text {
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  opacity: 0.9;
+}
+
+.cta-btn {
+  background: linear-gradient(135deg, #4f46e5 0%, #818cf8 100%);
+  color: white;
+  font-weight: 600;
+  padding: 1rem 2.5rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  border: none;
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+  transition: all 0.4s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(79, 70, 229, 0.4);
+  background: linear-gradient(135deg, #4338ca 0%, #6366f1 100%);
+  color: white;
+}
+
+/* Add smooth scrolling to the entire document */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced active state for navigation links */
+.nav-links a.active {
+  color: var(--primary);
+  position: relative;
+  font-weight: 600;
+}
+
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -6px; /* Position below the text */
+  left: 0;
+  width: 100%;
+  height: 3px; /* Thicker underline */
+  background: var(--gradient-primary); /* Use primary gradient */
+  border-radius: 2px;
+  opacity: 1;
+  transform: scaleX(1);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Mobile navigation active state */
+.mobile-nav-links li a.active {
+  color: var(--primary);
+  font-weight: 600;
+  position: relative;
+  padding-left: 16px;
+}
+
+.mobile-nav-links li a.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(79, 70, 229, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(79, 70, 229, 0);
+  }
+}
+
+/* Step color classes */
+.step-color-1 {
+  --card-accent-color: #4f46e5;
+}
+
+.step-color-2 {
+  --card-accent-color: #8b5cf6;
+}
+
+.step-color-3 {
+  --card-accent-color: #6366f1;
+}
+
+.step-color-4 {
+  --card-accent-color: #3b82f6;
+}
+
+/* Step icon background classes */
+.step-color-1-bg {
+  background: rgba(79, 70, 229, 0.15);
+  color: #4f46e5;
+}
+
+.step-color-2-bg {
+  background: rgba(139, 92, 246, 0.15);
+  color: #8b5cf6;
+}
+
+.step-color-3-bg {
+  background: rgba(99, 102, 241, 0.15);
+  color: #6366f1;
+}
+
+.step-color-4-bg {
+  background: rgba(59, 130, 246, 0.15);
+  color: #3b82f6;
+}
+
+/* Focus styles for keyboard navigation */
+.nav-links a:focus,
+.header-btn:focus,
+.mobile-nav-links a:focus,
+.nav-toggle-input:focus + .nav-toggle-label {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Hide focus outline when using mouse */
+.nav-links a:focus:not(:focus-visible),
+.header-btn:focus:not(:focus-visible),
+.mobile-nav-links a:focus:not(:focus-visible),
+.nav-toggle-input:focus:not(:focus-visible) + .nav-toggle-label {
+  outline: none;
+}
+
+/* Time remaining styles */
+.time-remaining {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.time-icon {
+  margin-right: 8px;
+  color: #007bff;
+}
+
+/* Processing Status Component Updates */
+.status-message {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  color: var(--text-primary, #f8fafc);
+}
+
+.time-remaining {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: rgba(79, 70, 229, 0.1);
+  border-radius: 6px;
+  border-left: 3px solid var(--primary);
+}
+
+.time-icon {
+  color: var(--primary-light);
+  margin-right: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.status-progress-wrapper {
+  margin-bottom: 2rem;
+}
+
+.status-progress {
+  height: 12px;
+  border-radius: 6px;
+  background-color: var(--dark-surface);
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.status-progress-bar-processing {
+  background-image: linear-gradient(45deg, 
+    var(--primary) 25%, 
+    var(--primary-light) 25%, 
+    var(--primary-light) 50%, 
+    var(--primary) 50%, 
+    var(--primary) 75%, 
+    var(--primary-light) 75%, 
+    var(--primary-light) 100%);
+  background-size: 28px 28px;
+  animation: progress-bar-stripes 1s linear infinite, pulse-glow 2s ease-in-out infinite;
+  position: relative;
+}
+
+.status-progress-bar-processing::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    rgba(255, 255, 255, 0) 0%, 
+    rgba(255, 255, 255, 0.3) 50%, 
+    rgba(255, 255, 255, 0) 100%);
+  animation: shine-effect 2s infinite;
+}
+
+.status-progress-bar-completed {
+  background: var(--gradient-primary);
+}
+
+.status-progress-bar-default {
+  background: var(--gradient-secondary);
+}
+
+/* Processing steps styling */
+.processing-steps {
+  margin-top: 20px !important;
+  display: block !important;
+}
+
+.processing-step {
+  display: flex !important;
+  align-items: center !important;
+  padding: 10px !important;
+  margin-bottom: 10px !important;
+  background-color: rgba(30, 41, 59, 0.6) !important;
+  border-radius: 8px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.processing-step .step-icon {
+  width: 40px !important;
+  height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 8px !important;
+  margin-right: 15px !important;
+  background-color: rgba(30, 41, 59, 0.8) !important;
+}
+
+.processing-step .step-content {
+  flex: 1 !important;
+}
+
+.processing-step .step-title {
+  font-weight: bold !important;
+  color: #f8fafc !important;
+  margin-bottom: 3px !important;
+}
+
+.processing-step .step-description {
+  color: #cbd5e1 !important;
+  font-size: 0.875rem !important;
+}
+
+/* Step colors */
+.step-color-1 {
+  color: #60a5fa; /* Blue */
+}
+
+.step-color-2 {
+  color: #a78bfa; /* Purple */
+}
+
+.step-color-3 {
+  color: #fb7185; /* Pink */
+}
+
+.step-color-4 {
+  color: #34d399; /* Green */
+}
+
+.step-color-1-bg {
+  background: rgba(96, 165, 250, 0.2);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background: rgba(167, 139, 250, 0.2);
+  color: #a78bfa;
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background: rgba(249, 115, 22, 0.2);
+  color: #fb7185;
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Animation keyframes */
+@keyframes progress-bar-stripes {
+  from { background-position: 28px 0; }
+  to { background-position: 0 0; }
+}
+
+@keyframes shine-effect {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+  50% { box-shadow: 0 0 10px rgba(79, 70, 229, 0.5); }
+  100% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+}
+
+/* Error details styling */
+.error-details {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.error-details h4 {
+  color: var(--error);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.error-message {
+  font-family: monospace;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  overflow-x: auto;
+  color: var(--text-secondary);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .status-card {
+    padding: 0.75rem;
+  }
+  
+  .processing-step {
+    padding: 0.5rem;
+  }
+  
+  .step-icon {
+    min-width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  
+  .step-title {
+    font-size: 0.875rem;
+  }
+  
+  .step-description {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .status-card {
+    padding: 0.5rem;
+  }
+  
+  .status-icon-container {
+    width: 38px;
+    height: 38px;
+    margin-right: 0.75rem;
+  }
+  
+  .status-title {
+    font-size: 1.25rem;
+  }
+  
+  .status-message {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Improved Text visibility fixes for ProcessingStatus component */
+.visible-status-message {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-time-remaining {
+  color: var(--text-secondary, #cbd5e1) !important;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.visible-step-title {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-step-description {
+  color: var(--text-secondary, #cbd5e1) !important;
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+/* Improved step background colors */
+.step-color-1-bg {
+  background-color: rgba(96, 165, 250, 0.2) !important; /* Blue with opacity */
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background-color: rgba(167, 139, 250, 0.2) !important; /* Purple with opacity */
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background-color: rgba(249, 115, 22, 0.2) !important; /* Orange with opacity */
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background-color: rgba(16, 185, 129, 0.2) !important; /* Green with opacity */
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Add a stable layout for the processing steps */
+.processing-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.processing-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background-color: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s ease;
+}
+
+.processing-step.active {
+  background-color: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  background-color: rgba(30, 41, 59, 0.5);
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary, #f8fafc);
+}
+
+.step-description {
+  font-size: 0.875rem;
+  color: var(--text-secondary, #cbd5e1);
+  opacity: 0.9;
+}
+
+/* Step colors */
+.step-color-1 {
+  color: #60a5fa; /* Blue */
+}
+
+.step-color-2 {
+  color: #a78bfa; /* Purple */
+}
+
+.step-color-3 {
+  color: #fb7185; /* Pink */
+}
+
+.step-color-4 {
+  color: #34d399; /* Green */
+}
+
+.step-color-1-bg {
+  background: rgba(96, 165, 250, 0.2);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background: rgba(167, 139, 250, 0.2);
+  color: #a78bfa;
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background: rgba(249, 115, 22, 0.2);
+  color: #fb7185;
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Animation keyframes */
+@keyframes progress-bar-stripes {
+  from { background-position: 28px 0; }
+  to { background-position: 0 0; }
+}
+
+@keyframes shine-effect {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+  50% { box-shadow: 0 0 10px rgba(79, 70, 229, 0.5); }
+  100% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+}
+
+/* Error details styling */
+.error-details {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.error-details h4 {
+  color: var(--error);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.error-message {
+  font-family: monospace;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  overflow-x: auto;
+  color: var(--text-secondary);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .status-card {
+    padding: 0.75rem;
+  }
+  
+  .processing-step {
+    padding: 0.5rem;
+  }
+  
+  .step-icon {
+    min-width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  
+  .step-title {
+    font-size: 0.875rem;
+  }
+  
+  .step-description {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .status-card {
+    padding: 0.5rem;
+  }
+  
+  .status-icon-container {
+    width: 38px;
+    height: 38px;
+    margin-right: 0.75rem;
+  }
+  
+  .status-title {
+    font-size: 1.25rem;
+  }
+  
+  .status-message {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Improved Text visibility fixes for ProcessingStatus component */
+.visible-status-message {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-time-remaining {
+  color: var(--text-secondary, #cbd5e1) !important;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.visible-step-title {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-step-description {
+  color: var(--text-secondary, #cbd5e1) !important;
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+/* Improved step background colors */
+.step-color-1-bg {
+  background-color: rgba(96, 165, 250, 0.2) !important; /* Blue with opacity */
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background-color: rgba(167, 139, 250, 0.2) !important; /* Purple with opacity */
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background-color: rgba(249, 115, 22, 0.2) !important; /* Orange with opacity */
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background-color: rgba(16, 185, 129, 0.2) !important; /* Green with opacity */
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Add a stable layout for the processing steps */
+.processing-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.processing-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background-color: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s ease;
+}
+
+.processing-step.active {
+  background-color: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  background-color: rgba(30, 41, 59, 0.5);
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary, #f8fafc);
+}
+
+.step-description {
+  font-size: 0.875rem;
+  color: var(--text-secondary, #cbd5e1);
+  opacity: 0.9;
+}
+
+/* Step colors */
+.step-color-1 {
+  color: #60a5fa; /* Blue */
+}
+
+.step-color-2 {
+  color: #a78bfa; /* Purple */
+}
+
+.step-color-3 {
+  color: #fb7185; /* Pink */
+}
+
+.step-color-4 {
+  color: #34d399; /* Green */
+}
+
+.step-color-1-bg {
+  background: rgba(96, 165, 250, 0.2);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background: rgba(167, 139, 250, 0.2);
+  color: #a78bfa;
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background: rgba(249, 115, 22, 0.2);
+  color: #fb7185;
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Animation keyframes */
+@keyframes progress-bar-stripes {
+  from { background-position: 28px 0; }
+  to { background-position: 0 0; }
+}
+
+@keyframes shine-effect {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+  50% { box-shadow: 0 0 10px rgba(79, 70, 229, 0.5); }
+  100% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+}
+
+/* Error details styling */
+.error-details {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.error-details h4 {
+  color: var(--error);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.error-message {
+  font-family: monospace;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  overflow-x: auto;
+  color: var(--text-secondary);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .status-card {
+    padding: 0.75rem;
+  }
+  
+  .processing-step {
+    padding: 0.5rem;
+  }
+  
+  .step-icon {
+    min-width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  
+  .step-title {
+    font-size: 0.875rem;
+  }
+  
+  .step-description {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .status-card {
+    padding: 0.5rem;
+  }
+  
+  .status-icon-container {
+    width: 38px;
+    height: 38px;
+    margin-right: 0.75rem;
+  }
+  
+  .status-title {
+    font-size: 1.25rem;
+  }
+  
+  .status-message {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Improved Text visibility fixes for ProcessingStatus component */
+.visible-status-message {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-time-remaining {
+  color: var(--text-secondary, #cbd5e1) !important;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.visible-step-title {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-step-description {
+  color: var(--text-secondary, #cbd5e1) !important;
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+/* Improved step background colors */
+.step-color-1-bg {
+  background-color: rgba(96, 165, 250, 0.2) !important; /* Blue with opacity */
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background-color: rgba(167, 139, 250, 0.2) !important; /* Purple with opacity */
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background-color: rgba(249, 115, 22, 0.2) !important; /* Orange with opacity */
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background-color: rgba(16, 185, 129, 0.2) !important; /* Green with opacity */
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Add a stable layout for the processing steps */
+.processing-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.processing-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background-color: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s ease;
+}
+
+.processing-step.active {
+  background-color: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  background-color: rgba(30, 41, 59, 0.5);
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary, #f8fafc);
+}
+
+.step-description {
+  font-size: 0.875rem;
+  color: var(--text-secondary, #cbd5e1);
+  opacity: 0.9;
+}
+
+/* Step colors */
+.step-color-1 {
+  color: #60a5fa; /* Blue */
+}
+
+.step-color-2 {
+  color: #a78bfa; /* Purple */
+}
+
+.step-color-3 {
+  color: #fb7185; /* Pink */
+}
+
+.step-color-4 {
+  color: #34d399; /* Green */
+}
+
+.step-color-1-bg {
+  background: rgba(96, 165, 250, 0.2);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background: rgba(167, 139, 250, 0.2);
+  color: #a78bfa;
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background: rgba(249, 115, 22, 0.2);
+  color: #fb7185;
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Animation keyframes */
+@keyframes progress-bar-stripes {
+  from { background-position: 28px 0; }
+  to { background-position: 0 0; }
+}
+
+@keyframes shine-effect {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+  50% { box-shadow: 0 0 10px rgba(79, 70, 229, 0.5); }
+  100% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+}
+
+/* Error details styling */
+.error-details {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.error-details h4 {
+  color: var(--error);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.error-message {
+  font-family: monospace;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  overflow-x: auto;
+  color: var(--text-secondary);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .status-card {
+    padding: 0.75rem;
+  }
+  
+  .processing-step {
+    padding: 0.5rem;
+  }
+  
+  .step-icon {
+    min-width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  
+  .step-title {
+    font-size: 0.875rem;
+  }
+  
+  .step-description {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .status-card {
+    padding: 0.5rem;
+  }
+  
+  .status-icon-container {
+    width: 38px;
+    height: 38px;
+    margin-right: 0.75rem;
+  }
+  
+  .status-title {
+    font-size: 1.25rem;
+  }
+  
+  .status-message {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Improved Text visibility fixes for ProcessingStatus component */
+.visible-status-message {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-time-remaining {
+  color: var(--text-secondary, #cbd5e1) !important;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.visible-step-title {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-step-description {
+  color: var(--text-secondary, #cbd5e1) !important;
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+/* Improved step background colors */
+.step-color-1-bg {
+  background-color: rgba(96, 165, 250, 0.2) !important; /* Blue with opacity */
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background-color: rgba(167, 139, 250, 0.2) !important; /* Purple with opacity */
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background-color: rgba(249, 115, 22, 0.2) !important; /* Orange with opacity */
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background-color: rgba(16, 185, 129, 0.2) !important; /* Green with opacity */
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Add a stable layout for the processing steps */
+.processing-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.processing-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background-color: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s ease;
+}
+
+.processing-step.active {
+  background-color: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  background-color: rgba(30, 41, 59, 0.5);
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary, #f8fafc);
+}
+
+.step-description {
+  font-size: 0.875rem;
+  color: var(--text-secondary, #cbd5e1);
+  opacity: 0.9;
+}
+
+/* Step colors */
+.step-color-1 {
+  color: #60a5fa; /* Blue */
+}
+
+.step-color-2 {
+  color: #a78bfa; /* Purple */
+}
+
+.step-color-3 {
+  color: #fb7185; /* Pink */
+}
+
+.step-color-4 {
+  color: #34d399; /* Green */
+}
+
+.step-color-1-bg {
+  background: rgba(96, 165, 250, 0.2);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background: rgba(167, 139, 250, 0.2);
+  color: #a78bfa;
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background: rgba(249, 115, 22, 0.2);
+  color: #fb7185;
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Animation keyframes */
+@keyframes progress-bar-stripes {
+  from { background-position: 28px 0; }
+  to { background-position: 0 0; }
+}
+
+@keyframes shine-effect {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+  50% { box-shadow: 0 0 10px rgba(79, 70, 229, 0.5); }
+  100% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+}
+
+/* Error details styling */
+.error-details {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.error-details h4 {
+  color: var(--error);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.error-message {
+  font-family: monospace;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  overflow-x: auto;
+  color: var(--text-secondary);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .status-card {
+    padding: 0.75rem;
+  }
+  
+  .processing-step {
+    padding: 0.5rem;
+  }
+  
+  .step-icon {
+    min-width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  
+  .step-title {
+    font-size: 0.875rem;
+  }
+  
+  .step-description {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .status-card {
+    padding: 0.5rem;
+  }
+  
+  .status-icon-container {
+    width: 38px;
+    height: 38px;
+    margin-right: 0.75rem;
+  }
+  
+  .status-title {
+    font-size: 1.25rem;
+  }
+  
+  .status-message {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Improved Text visibility fixes for ProcessingStatus component */
+.visible-status-message {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-time-remaining {
+  color: var(--text-secondary, #cbd5e1) !important;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.visible-step-title {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-step-description {
+  color: var(--text-secondary, #cbd5e1) !important;
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+/* Improved step background colors */
+.step-color-1-bg {
+  background-color: rgba(96, 165, 250, 0.2) !important; /* Blue with opacity */
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background-color: rgba(167, 139, 250, 0.2) !important; /* Purple with opacity */
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background-color: rgba(249, 115, 22, 0.2) !important; /* Orange with opacity */
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background-color: rgba(16, 185, 129, 0.2) !important; /* Green with opacity */
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Add a stable layout for the processing steps */
+.processing-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.processing-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background-color: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s ease;
+}
+
+.processing-step.active {
+  background-color: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  background-color: rgba(30, 41, 59, 0.5);
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary, #f8fafc);
+}
+
+.step-description {
+  font-size: 0.875rem;
+  color: var(--text-secondary, #cbd5e1);
+  opacity: 0.9;
+}
+
+/* Step colors */
+.step-color-1 {
+  color: #60a5fa; /* Blue */
+}
+
+.step-color-2 {
+  color: #a78bfa; /* Purple */
+}
+
+.step-color-3 {
+  color: #fb7185; /* Pink */
+}
+
+.step-color-4 {
+  color: #34d399; /* Green */
+}
+
+.step-color-1-bg {
+  background: rgba(96, 165, 250, 0.2);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background: rgba(167, 139, 250, 0.2);
+  color: #a78bfa;
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background: rgba(249, 115, 22, 0.2);
+  color: #fb7185;
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Animation keyframes */
+@keyframes progress-bar-stripes {
+  from { background-position: 28px 0; }
+  to { background-position: 0 0; }
+}
+
+@keyframes shine-effect {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+  50% { box-shadow: 0 0 10px rgba(79, 70, 229, 0.5); }
+  100% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+}
+
+/* Error details styling */
+.error-details {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.error-details h4 {
+  color: var(--error);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.error-message {
+  font-family: monospace;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  overflow-x: auto;
+  color: var(--text-secondary);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .status-card {
+    padding: 0.75rem;
+  }
+  
+  .processing-step {
+    padding: 0.5rem;
+  }
+  
+  .step-icon {
+    min-width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  
+  .step-title {
+    font-size: 0.875rem;
+  }
+  
+  .step-description {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .status-card {
+    padding: 0.5rem;
+  }
+  
+  .status-icon-container {
+    width: 38px;
+    height: 38px;
+    margin-right: 0.75rem;
+  }
+  
+  .status-title {
+    font-size: 1.25rem;
+  }
+  
+  .status-message {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Improved Text visibility fixes for ProcessingStatus component */
+.visible-status-message {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-time-remaining {
+  color: var(--text-secondary, #cbd5e1) !important;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.visible-step-title {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-step-description {
+  color: var(--text-secondary, #cbd5e1) !important;
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+/* Improved step background colors */
+.step-color-1-bg {
+  background-color: rgba(96, 165, 250, 0.2) !important; /* Blue with opacity */
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background-color: rgba(167, 139, 250, 0.2) !important; /* Purple with opacity */
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background-color: rgba(249, 115, 22, 0.2) !important; /* Orange with opacity */
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background-color: rgba(16, 185, 129, 0.2) !important; /* Green with opacity */
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Add a stable layout for the processing steps */
+.processing-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.processing-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background-color: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s ease;
+}
+
+.processing-step.active {
+  background-color: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  background-color: rgba(30, 41, 59, 0.5);
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary, #f8fafc);
+}
+
+.step-description {
+  font-size: 0.875rem;
+  color: var(--text-secondary, #cbd5e1);
+  opacity: 0.9;
+}
+
+/* Step colors */
+.step-color-1 {
+  color: #60a5fa; /* Blue */
+}
+
+.step-color-2 {
+  color: #a78bfa; /* Purple */
+}
+
+.step-color-3 {
+  color: #fb7185; /* Pink */
+}
+
+.step-color-4 {
+  color: #34d399; /* Green */
+}
+
+.step-color-1-bg {
+  background: rgba(96, 165, 250, 0.2);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background: rgba(167, 139, 250, 0.2);
+  color: #a78bfa;
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background: rgba(249, 115, 22, 0.2);
+  color: #fb7185;
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Animation keyframes */
+@keyframes progress-bar-stripes {
+  from { background-position: 28px 0; }
+  to { background-position: 0 0; }
+}
+
+@keyframes shine-effect {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+  50% { box-shadow: 0 0 10px rgba(79, 70, 229, 0.5); }
+  100% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+}
+
+/* Error details styling */
+.error-details {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.error-details h4 {
+  color: var(--error);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.error-message {
+  font-family: monospace;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  overflow-x: auto;
+  color: var(--text-secondary);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .status-card {
+    padding: 0.75rem;
+  }
+  
+  .processing-step {
+    padding: 0.5rem;
+  }
+  
+  .step-icon {
+    min-width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  
+  .step-title {
+    font-size: 0.875rem;
+  }
+  
+  .step-description {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .status-card {
+    padding: 0.5rem;
+  }
+  
+  .status-icon-container {
+    width: 38px;
+    height: 38px;
+    margin-right: 0.75rem;
+  }
+  
+  .status-title {
+    font-size: 1.25rem;
+  }
+  
+  .status-message {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Improved Text visibility fixes for ProcessingStatus component */
+.visible-status-message {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-time-remaining {
+  color: var(--text-secondary, #cbd5e1) !important;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.visible-step-title {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-step-description {
+  color: var(--text-secondary, #cbd5e1) !important;
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+/* Improved step background colors */
+.step-color-1-bg {
+  background-color: rgba(96, 165, 250, 0.2) !important; /* Blue with opacity */
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background-color: rgba(167, 139, 250, 0.2) !important; /* Purple with opacity */
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background-color: rgba(249, 115, 22, 0.2) !important; /* Orange with opacity */
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background-color: rgba(16, 185, 129, 0.2) !important; /* Green with opacity */
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Add a stable layout for the processing steps */
+.processing-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.processing-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background-color: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s ease;
+}
+
+.processing-step.active {
+  background-color: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  background-color: rgba(30, 41, 59, 0.5);
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary, #f8fafc);
+}
+
+.step-description {
+  font-size: 0.875rem;
+  color: var(--text-secondary, #cbd5e1);
+  opacity: 0.9;
+}
+
+/* Step colors */
+.step-color-1 {
+  color: #60a5fa; /* Blue */
+}
+
+.step-color-2 {
+  color: #a78bfa; /* Purple */
+}
+
+.step-color-3 {
+  color: #fb7185; /* Pink */
+}
+
+.step-color-4 {
+  color: #34d399; /* Green */
+}
+
+.step-color-1-bg {
+  background: rgba(96, 165, 250, 0.2);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background: rgba(167, 139, 250, 0.2);
+  color: #a78bfa;
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background: rgba(249, 115, 22, 0.2);
+  color: #fb7185;
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Animation keyframes */
+@keyframes progress-bar-stripes {
+  from { background-position: 28px 0; }
+  to { background-position: 0 0; }
+}
+
+@keyframes shine-effect {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+  50% { box-shadow: 0 0 10px rgba(79, 70, 229, 0.5); }
+  100% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+}
+
+/* Error details styling */
+.error-details {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.error-details h4 {
+  color: var(--error);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.error-message {
+  font-family: monospace;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  overflow-x: auto;
+  color: var(--text-secondary);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+.status-card {
+    padding: 0.75rem;
+  }
+  
+  .processing-step {
+    padding: 0.5rem;
+  }
+  
+  .step-icon {
+    min-width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  
+  .step-title {
+    font-size: 0.875rem;
+  }
+  
+.step-description {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .status-card {
+    padding: 0.5rem;
+  }
+  
+  .status-icon-container {
+    width: 38px;
+    height: 38px;
+    margin-right: 0.75rem;
+  }
+  
+.status-title {
+    font-size: 1.25rem;
+  }
+  
+  .status-message {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Improved Text visibility fixes for ProcessingStatus component */
+.visible-status-message {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-time-remaining {
+  color: var(--text-secondary, #cbd5e1) !important;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.visible-step-title {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-step-description {
+  color: var(--text-secondary, #cbd5e1) !important;
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+/* Improved step background colors */
+.step-color-1-bg {
+  background-color: rgba(96, 165, 250, 0.2) !important; /* Blue with opacity */
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background-color: rgba(167, 139, 250, 0.2) !important; /* Purple with opacity */
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background-color: rgba(249, 115, 22, 0.2) !important; /* Orange with opacity */
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background-color: rgba(16, 185, 129, 0.2) !important; /* Green with opacity */
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Add a stable layout for the processing steps */
+.processing-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.processing-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background-color: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s ease;
+}
+
+.processing-step.active {
+  background-color: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  background-color: rgba(30, 41, 59, 0.5);
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary, #f8fafc);
+}
+
+.step-description {
+  font-size: 0.875rem;
+  color: var(--text-secondary, #cbd5e1);
+  opacity: 0.9;
+}
+
+/* Step colors */
+.step-color-1 {
+  color: #60a5fa; /* Blue */
+}
+
+.step-color-2 {
+  color: #a78bfa; /* Purple */
+}
+
+.step-color-3 {
+  color: #fb7185; /* Pink */
+}
+
+.step-color-4 {
+  color: #34d399; /* Green */
+}
+
+.step-color-1-bg {
+  background: rgba(96, 165, 250, 0.2);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background: rgba(167, 139, 250, 0.2);
+  color: #a78bfa;
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background: rgba(249, 115, 22, 0.2);
+  color: #fb7185;
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Animation keyframes */
+@keyframes progress-bar-stripes {
+  from { background-position: 28px 0; }
+  to { background-position: 0 0; }
+}
+
+@keyframes shine-effect {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+  50% { box-shadow: 0 0 10px rgba(79, 70, 229, 0.5); }
+  100% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+}
+
+/* Error details styling */
+.error-details {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.error-details h4 {
+  color: var(--error);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.error-message {
+  font-family: monospace;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  overflow-x: auto;
+  color: var(--text-secondary);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+.status-card {
+    padding: 0.75rem;
+  }
+  
+  .processing-step {
+    padding: 0.5rem;
+  }
+  
+  .step-icon {
+    min-width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  
+  .step-title {
+    font-size: 0.875rem;
+  }
+  
+  .step-description {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .status-card {
+    padding: 0.5rem;
+  }
+  
+  .status-icon-container {
+    width: 38px;
+    height: 38px;
+    margin-right: 0.75rem;
+  }
+  
+  .status-title {
+    font-size: 1.25rem;
+  }
+  
+.status-message {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Improved Text visibility fixes for ProcessingStatus component */
+.visible-status-message {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-time-remaining {
+  color: var(--text-secondary, #cbd5e1) !important;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.visible-step-title {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-step-description {
+  color: var(--text-secondary, #cbd5e1) !important;
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+/* Improved step background colors */
+.step-color-1-bg {
+  background-color: rgba(96, 165, 250, 0.2) !important; /* Blue with opacity */
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background-color: rgba(167, 139, 250, 0.2) !important; /* Purple with opacity */
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background-color: rgba(249, 115, 22, 0.2) !important; /* Orange with opacity */
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background-color: rgba(16, 185, 129, 0.2) !important; /* Green with opacity */
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Add a stable layout for the processing steps */
+.processing-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.processing-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background-color: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s ease;
+}
+
+.processing-step.active {
+  background-color: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  background-color: rgba(30, 41, 59, 0.5);
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary, #f8fafc);
+}
+
+.step-description {
+  font-size: 0.875rem;
+  color: var(--text-secondary, #cbd5e1);
+  opacity: 0.9;
+}
+
+/* Step colors */
+.step-color-1 {
+  color: #60a5fa; /* Blue */
+}
+
+.step-color-2 {
+  color: #a78bfa; /* Purple */
+}
+
+.step-color-3 {
+  color: #fb7185; /* Pink */
+}
+
+.step-color-4 {
+  color: #34d399; /* Green */
+}
+
+.step-color-1-bg {
+  background: rgba(96, 165, 250, 0.2);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background: rgba(167, 139, 250, 0.2);
+  color: #a78bfa;
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background: rgba(249, 115, 22, 0.2);
+  color: #fb7185;
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Animation keyframes */
+@keyframes progress-bar-stripes {
+  from { background-position: 28px 0; }
+  to { background-position: 0 0; }
+}
+
+@keyframes shine-effect {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+  50% { box-shadow: 0 0 10px rgba(79, 70, 229, 0.5); }
+  100% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+}
+
+/* Error details styling */
+.error-details {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.error-details h4 {
+  color: var(--error);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.error-message {
+  font-family: monospace;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  overflow-x: auto;
+  color: var(--text-secondary);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+.status-card {
+    padding: 0.75rem;
+  }
+  
+  .processing-step {
+    padding: 0.5rem;
+  }
+  
+  .step-icon {
+    min-width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  
+  .step-title {
+    font-size: 0.875rem;
+  }
+  
+  .step-description {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .status-card {
+    padding: 0.5rem;
+  }
+  
+  .status-icon-container {
+    width: 38px;
+    height: 38px;
+    margin-right: 0.75rem;
+  }
+  
+  .status-title {
+    font-size: 1.25rem;
+  }
+  
+.status-message {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Improved Text visibility fixes for ProcessingStatus component */
+.visible-status-message {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-time-remaining {
+  color: var(--text-secondary, #cbd5e1) !important;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.visible-step-title {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-step-description {
+  color: var(--text-secondary, #cbd5e1) !important;
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+/* Improved step background colors */
+.step-color-1-bg {
+  background-color: rgba(96, 165, 250, 0.2) !important; /* Blue with opacity */
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background-color: rgba(167, 139, 250, 0.2) !important; /* Purple with opacity */
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background-color: rgba(249, 115, 22, 0.2) !important; /* Orange with opacity */
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background-color: rgba(16, 185, 129, 0.2) !important; /* Green with opacity */
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Add a stable layout for the processing steps */
+.processing-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.processing-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background-color: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s ease;
+}
+
+.processing-step.active {
+  background-color: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  background-color: rgba(30, 41, 59, 0.5);
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary, #f8fafc);
+}
+
+.step-description {
+  font-size: 0.875rem;
+  color: var(--text-secondary, #cbd5e1);
+  opacity: 0.9;
+}
+
+/* Step colors */
+.step-color-1 {
+  color: #60a5fa; /* Blue */
+}
+
+.step-color-2 {
+  color: #a78bfa; /* Purple */
+}
+
+.step-color-3 {
+  color: #fb7185; /* Pink */
+}
+
+.step-color-4 {
+  color: #34d399; /* Green */
+}
+
+.step-color-1-bg {
+  background: rgba(96, 165, 250, 0.2);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background: rgba(167, 139, 250, 0.2);
+  color: #a78bfa;
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background: rgba(249, 115, 22, 0.2);
+  color: #fb7185;
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Animation keyframes */
+@keyframes progress-bar-stripes {
+  from { background-position: 28px 0; }
+  to { background-position: 0 0; }
+}
+
+@keyframes shine-effect {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+  50% { box-shadow: 0 0 10px rgba(79, 70, 229, 0.5); }
+  100% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+}
+
+/* Error details styling */
+.error-details {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.error-details h4 {
+  color: var(--error);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.error-message {
+  font-family: monospace;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  overflow-x: auto;
+  color: var(--text-secondary);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .status-card {
+    padding: 0.75rem;
+}
+
+.processing-step {
+    padding: 0.5rem;
+  }
+  
+  .step-icon {
+    min-width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  
+  .step-title {
+    font-size: 0.875rem;
+  }
+  
+  .step-description {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .status-card {
+    padding: 0.5rem;
+  }
+  
+  .status-icon-container {
+    width: 38px;
+    height: 38px;
+    margin-right: 0.75rem;
+  }
+  
+  .status-title {
+    font-size: 1.25rem;
+  }
+  
+  .status-message {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Improved Text visibility fixes for ProcessingStatus component */
+.visible-status-message {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-time-remaining {
+  color: var(--text-secondary, #cbd5e1) !important;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.visible-step-title {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-step-description {
+  color: var(--text-secondary, #cbd5e1) !important;
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+/* Improved step background colors */
+.step-color-1-bg {
+  background-color: rgba(96, 165, 250, 0.2) !important; /* Blue with opacity */
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background-color: rgba(167, 139, 250, 0.2) !important; /* Purple with opacity */
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background-color: rgba(249, 115, 22, 0.2) !important; /* Orange with opacity */
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background-color: rgba(16, 185, 129, 0.2) !important; /* Green with opacity */
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Add a stable layout for the processing steps */
+.processing-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.processing-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background-color: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s ease;
+}
+
+.processing-step.active {
+  background-color: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  background-color: rgba(30, 41, 59, 0.5);
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary, #f8fafc);
+}
+
+.step-description {
+  font-size: 0.875rem;
+  color: var(--text-secondary, #cbd5e1);
+  opacity: 0.9;
+}
+
+/* Step colors */
+.step-color-1 {
+  color: #60a5fa; /* Blue */
+}
+
+.step-color-2 {
+  color: #a78bfa; /* Purple */
+}
+
+.step-color-3 {
+  color: #fb7185; /* Pink */
+}
+
+.step-color-4 {
+  color: #34d399; /* Green */
+}
+
+.step-color-1-bg {
+  background: rgba(96, 165, 250, 0.2);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background: rgba(167, 139, 250, 0.2);
+  color: #a78bfa;
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background: rgba(249, 115, 22, 0.2);
+  color: #fb7185;
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Animation keyframes */
+@keyframes progress-bar-stripes {
+  from { background-position: 28px 0; }
+  to { background-position: 0 0; }
+}
+
+@keyframes shine-effect {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+  50% { box-shadow: 0 0 10px rgba(79, 70, 229, 0.5); }
+  100% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+}
+
+/* Error details styling */
+.error-details {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.error-details h4 {
+  color: var(--error);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.error-message {
+  font-family: monospace;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  overflow-x: auto;
+  color: var(--text-secondary);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .status-card {
+    padding: 0.75rem;
+  }
+  
+  .processing-step {
+    padding: 0.5rem;
+  }
+  
+  .step-icon {
+    min-width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  
+  .step-title {
+    font-size: 0.875rem;
+  }
+  
+  .step-description {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .status-card {
+    padding: 0.5rem;
+  }
+  
+  .status-icon-container {
+    width: 38px;
+    height: 38px;
+    margin-right: 0.75rem;
+  }
+  
+  .status-title {
+    font-size: 1.25rem;
+  }
+  
+  .status-message {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Improved Text visibility fixes for ProcessingStatus component */
+.visible-status-message {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-time-remaining {
+  color: var(--text-secondary, #cbd5e1) !important;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.visible-step-title {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-step-description {
+  color: var(--text-secondary, #cbd5e1) !important;
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+/* Improved step background colors */
+.step-color-1-bg {
+  background-color: rgba(96, 165, 250, 0.2) !important; /* Blue with opacity */
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background-color: rgba(167, 139, 250, 0.2) !important; /* Purple with opacity */
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background-color: rgba(249, 115, 22, 0.2) !important; /* Orange with opacity */
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background-color: rgba(16, 185, 129, 0.2) !important; /* Green with opacity */
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Add a stable layout for the processing steps */
+.processing-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.processing-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background-color: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s ease;
+}
+
+.processing-step.active {
+  background-color: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  background-color: rgba(30, 41, 59, 0.5);
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary, #f8fafc);
+}
+
+.step-description {
+  font-size: 0.875rem;
+  color: var(--text-secondary, #cbd5e1);
+  opacity: 0.9;
+}
+
+/* Step colors */
+.step-color-1 {
+  color: #60a5fa; /* Blue */
+}
+
+.step-color-2 {
+  color: #a78bfa; /* Purple */
+}
+
+.step-color-3 {
+  color: #fb7185; /* Pink */
+}
+
+.step-color-4 {
+  color: #34d399; /* Green */
+}
+
+.step-color-1-bg {
+  background: rgba(96, 165, 250, 0.2);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background: rgba(167, 139, 250, 0.2);
+  color: #a78bfa;
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background: rgba(249, 115, 22, 0.2);
+  color: #fb7185;
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Animation keyframes */
+@keyframes progress-bar-stripes {
+  from { background-position: 28px 0; }
+  to { background-position: 0 0; }
+}
+
+@keyframes shine-effect {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+  50% { box-shadow: 0 0 10px rgba(79, 70, 229, 0.5); }
+  100% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+}
+
+/* Error details styling */
+.error-details {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.error-details h4 {
+  color: var(--error);
+    margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.error-message {
+  font-family: monospace;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  overflow-x: auto;
+  color: var(--text-secondary);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .status-card {
+    padding: 0.75rem;
+  }
+  
+  .processing-step {
+    padding: 0.5rem;
+  }
+  
+  .step-icon {
+    min-width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  
+  .step-title {
+    font-size: 0.875rem;
+  }
+  
+  .step-description {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .status-card {
+    padding: 0.5rem;
+  }
+  
+  .status-icon-container {
+    width: 38px;
+    height: 38px;
+    margin-right: 0.75rem;
+  }
+  
+  .status-title {
+    font-size: 1.25rem;
+  }
+  
+  .status-message {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Improved Text visibility fixes for ProcessingStatus component */
+.visible-status-message {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-time-remaining {
+  color: var(--text-secondary, #cbd5e1) !important;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.visible-step-title {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-step-description {
+  color: var(--text-secondary, #cbd5e1) !important;
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+/* Improved step background colors */
+.step-color-1-bg {
+  background-color: rgba(96, 165, 250, 0.2) !important; /* Blue with opacity */
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background-color: rgba(167, 139, 250, 0.2) !important; /* Purple with opacity */
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background-color: rgba(249, 115, 22, 0.2) !important; /* Orange with opacity */
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background-color: rgba(16, 185, 129, 0.2) !important; /* Green with opacity */
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Add a stable layout for the processing steps */
+.processing-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.processing-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background-color: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s ease;
+}
+
+.processing-step.active {
+  background-color: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  background-color: rgba(30, 41, 59, 0.5);
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary, #f8fafc);
+}
+
+.step-description {
+  font-size: 0.875rem;
+  color: var(--text-secondary, #cbd5e1);
+  opacity: 0.9;
+}
+
+/* Step colors */
+.step-color-1 {
+  color: #60a5fa; /* Blue */
+}
+
+.step-color-2 {
+  color: #a78bfa; /* Purple */
+}
+
+.step-color-3 {
+  color: #fb7185; /* Pink */
+}
+
+.step-color-4 {
+  color: #34d399; /* Green */
+}
+
+.step-color-1-bg {
+  background: rgba(96, 165, 250, 0.2);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background: rgba(167, 139, 250, 0.2);
+  color: #a78bfa;
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background: rgba(249, 115, 22, 0.2);
+  color: #fb7185;
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Animation keyframes */
+@keyframes progress-bar-stripes {
+  from { background-position: 28px 0; }
+  to { background-position: 0 0; }
+}
+
+@keyframes shine-effect {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+  50% { box-shadow: 0 0 10px rgba(79, 70, 229, 0.5); }
+  100% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+}
+
+/* Error details styling */
+.error-details {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.error-details h4 {
+  color: var(--error);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.error-message {
+  font-family: monospace;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  overflow-x: auto;
+  color: var(--text-secondary);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .status-card {
+    padding: 0.75rem;
+  }
+  
+  .processing-step {
+    padding: 0.5rem;
+  }
+  
+  .step-icon {
+    min-width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  
+  .step-title {
+    font-size: 0.875rem;
+  }
+  
+  .step-description {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .status-card {
+    padding: 0.5rem;
+  }
+  
+  .status-icon-container {
+    width: 38px;
+    height: 38px;
+    margin-right: 0.75rem;
+  }
+  
+  .status-title {
+    font-size: 1.25rem;
+  }
+  
+  .status-message {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Improved Text visibility fixes for ProcessingStatus component */
+.visible-status-message {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-time-remaining {
+  color: var(--text-secondary, #cbd5e1) !important;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.visible-step-title {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-step-description {
+  color: var(--text-secondary, #cbd5e1) !important;
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+/* Improved step background colors */
+.step-color-1-bg {
+  background-color: rgba(96, 165, 250, 0.2) !important; /* Blue with opacity */
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background-color: rgba(167, 139, 250, 0.2) !important; /* Purple with opacity */
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background-color: rgba(249, 115, 22, 0.2) !important; /* Orange with opacity */
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background-color: rgba(16, 185, 129, 0.2) !important; /* Green with opacity */
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Add a stable layout for the processing steps */
+.processing-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.processing-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background-color: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s ease;
+}
+
+.processing-step.active {
+  background-color: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  background-color: rgba(30, 41, 59, 0.5);
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary, #f8fafc);
+}
+
+.step-description {
+  font-size: 0.875rem;
+  color: var(--text-secondary, #cbd5e1);
+  opacity: 0.9;
+}
+
+/* Step colors */
+.step-color-1 {
+  color: #60a5fa; /* Blue */
+}
+
+.step-color-2 {
+  color: #a78bfa; /* Purple */
+}
+
+.step-color-3 {
+  color: #fb7185; /* Pink */
+}
+
+.step-color-4 {
+  color: #34d399; /* Green */
+}
+
+.step-color-1-bg {
+  background: rgba(96, 165, 250, 0.2);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background: rgba(167, 139, 250, 0.2);
+  color: #a78bfa;
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background: rgba(249, 115, 22, 0.2);
+  color: #fb7185;
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Animation keyframes */
+@keyframes progress-bar-stripes {
+  from { background-position: 28px 0; }
+  to { background-position: 0 0; }
+}
+
+@keyframes shine-effect {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+  50% { box-shadow: 0 0 10px rgba(79, 70, 229, 0.5); }
+  100% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+}
+
+/* Error details styling */
+.error-details {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.error-details h4 {
+  color: var(--error);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.error-message {
+  font-family: monospace;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  overflow-x: auto;
+  color: var(--text-secondary);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .status-card {
+    padding: 0.75rem;
+  }
+  
+  .processing-step {
+    padding: 0.5rem;
+  }
+  
+  .step-icon {
+    min-width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  
+  .step-title {
+    font-size: 0.875rem;
+  }
+  
+  .step-description {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .status-card {
+    padding: 0.5rem;
+  }
+  
+  .status-icon-container {
+    width: 38px;
+    height: 38px;
+    margin-right: 0.75rem;
+  }
+  
+  .status-title {
+    font-size: 1.25rem;
+  }
+  
+  .status-message {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Improved Text visibility fixes for ProcessingStatus component */
+.visible-status-message {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-time-remaining {
+  color: var(--text-secondary, #cbd5e1) !important;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.visible-step-title {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-step-description {
+  color: var(--text-secondary, #cbd5e1) !important;
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+/* Improved step background colors */
+.step-color-1-bg {
+  background-color: rgba(96, 165, 250, 0.2) !important; /* Blue with opacity */
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background-color: rgba(167, 139, 250, 0.2) !important; /* Purple with opacity */
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background-color: rgba(249, 115, 22, 0.2) !important; /* Orange with opacity */
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background-color: rgba(16, 185, 129, 0.2) !important; /* Green with opacity */
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Add a stable layout for the processing steps */
+.processing-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.processing-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background-color: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s ease;
+}
+
+.processing-step.active {
+  background-color: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  background-color: rgba(30, 41, 59, 0.5);
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary, #f8fafc);
+}
+
+.step-description {
+  font-size: 0.875rem;
+  color: var(--text-secondary, #cbd5e1);
+  opacity: 0.9;
+}
+
+/* Step colors */
+.step-color-1 {
+  color: #60a5fa; /* Blue */
+}
+
+.step-color-2 {
+  color: #a78bfa; /* Purple */
+}
+
+.step-color-3 {
+  color: #fb7185; /* Pink */
+}
+
+.step-color-4 {
+  color: #34d399; /* Green */
+}
+
+.step-color-1-bg {
+  background: rgba(96, 165, 250, 0.2);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background: rgba(167, 139, 250, 0.2);
+  color: #a78bfa;
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background: rgba(249, 115, 22, 0.2);
+  color: #fb7185;
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Animation keyframes */
+@keyframes progress-bar-stripes {
+  from { background-position: 28px 0; }
+  to { background-position: 0 0; }
+}
+
+@keyframes shine-effect {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+  50% { box-shadow: 0 0 10px rgba(79, 70, 229, 0.5); }
+  100% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+}
+
+/* Error details styling */
+.error-details {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.error-details h4 {
+  color: var(--error);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.error-message {
+  font-family: monospace;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  overflow-x: auto;
+  color: var(--text-secondary);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .status-card {
+    padding: 0.75rem;
+  }
+  
+  .processing-step {
+    padding: 0.5rem;
+  }
+  
+  .step-icon {
+    min-width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  
+  .step-title {
+    font-size: 0.875rem;
+  }
+  
+  .step-description {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .status-card {
+    padding: 0.5rem;
+  }
+  
+  .status-icon-container {
+    width: 38px;
+    height: 38px;
+    margin-right: 0.75rem;
+  }
+  
+  .status-title {
+    font-size: 1.25rem;
+  }
+  
+  .status-message {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Improved Text visibility fixes for ProcessingStatus component */
+.visible-status-message {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-time-remaining {
+  color: var(--text-secondary, #cbd5e1) !important;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.visible-step-title {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-step-description {
+  color: var(--text-secondary, #cbd5e1) !important;
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+/* Improved step background colors */
+.step-color-1-bg {
+  background-color: rgba(96, 165, 250, 0.2) !important; /* Blue with opacity */
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background-color: rgba(167, 139, 250, 0.2) !important; /* Purple with opacity */
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background-color: rgba(249, 115, 22, 0.2) !important; /* Orange with opacity */
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background-color: rgba(16, 185, 129, 0.2) !important; /* Green with opacity */
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Add a stable layout for the processing steps */
+.processing-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.processing-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background-color: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s ease;
+}
+
+.processing-step.active {
+  background-color: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  background-color: rgba(30, 41, 59, 0.5);
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary, #f8fafc);
+}
+
+.step-description {
+  font-size: 0.875rem;
+  color: var(--text-secondary, #cbd5e1);
+  opacity: 0.9;
+}
+
+/* Step colors */
+.step-color-1 {
+  color: #60a5fa; /* Blue */
+}
+
+.step-color-2 {
+  color: #a78bfa; /* Purple */
+}
+
+.step-color-3 {
+  color: #fb7185; /* Pink */
+}
+
+.step-color-4 {
+  color: #34d399; /* Green */
+}
+
+.step-color-1-bg {
+  background: rgba(96, 165, 250, 0.2);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background: rgba(167, 139, 250, 0.2);
+  color: #a78bfa;
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background: rgba(249, 115, 22, 0.2);
+  color: #fb7185;
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Animation keyframes */
+@keyframes progress-bar-stripes {
+  from { background-position: 28px 0; }
+  to { background-position: 0 0; }
+}
+
+@keyframes shine-effect {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+  50% { box-shadow: 0 0 10px rgba(79, 70, 229, 0.5); }
+  100% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+}
+
+/* Error details styling */
+.error-details {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.error-details h4 {
+  color: var(--error);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.error-message {
+  font-family: monospace;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  overflow-x: auto;
+  color: var(--text-secondary);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .status-card {
+    padding: 0.75rem;
+  }
+  
+  .processing-step {
+    padding: 0.5rem;
+  }
+  
+  .step-icon {
+    min-width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  
+  .step-title {
+    font-size: 0.875rem;
+  }
+  
+  .step-description {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .status-card {
+    padding: 0.5rem;
+  }
+  
+  .status-icon-container {
+    width: 38px;
+    height: 38px;
+    margin-right: 0.75rem;
+  }
+  
+  .status-title {
+    font-size: 1.25rem;
+  }
+  
+  .status-message {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Improved Text visibility fixes for ProcessingStatus component */
+.visible-status-message {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-time-remaining {
+  color: var(--text-secondary, #cbd5e1) !important;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.visible-step-title {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-step-description {
+  color: var(--text-secondary, #cbd5e1) !important;
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+/* Improved step background colors */
+.step-color-1-bg {
+  background-color: rgba(96, 165, 250, 0.2) !important; /* Blue with opacity */
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background-color: rgba(167, 139, 250, 0.2) !important; /* Purple with opacity */
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background-color: rgba(249, 115, 22, 0.2) !important; /* Orange with opacity */
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background-color: rgba(16, 185, 129, 0.2) !important; /* Green with opacity */
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Add a stable layout for the processing steps */
+.processing-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.processing-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background-color: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s ease;
+}
+
+.processing-step.active {
+  background-color: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  background-color: rgba(30, 41, 59, 0.5);
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary, #f8fafc);
+}
+
+.step-description {
+  font-size: 0.875rem;
+  color: var(--text-secondary, #cbd5e1);
+  opacity: 0.9;
+}
+
+/* Step colors */
+.step-color-1 {
+  color: #60a5fa; /* Blue */
+}
+
+.step-color-2 {
+  color: #a78bfa; /* Purple */
+}
+
+.step-color-3 {
+  color: #fb7185; /* Pink */
+}
+
+.step-color-4 {
+  color: #34d399; /* Green */
+}
+
+.step-color-1-bg {
+  background: rgba(96, 165, 250, 0.2);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background: rgba(167, 139, 250, 0.2);
+  color: #a78bfa;
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background: rgba(249, 115, 22, 0.2);
+  color: #fb7185;
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Animation keyframes */
+@keyframes progress-bar-stripes {
+  from { background-position: 28px 0; }
+  to { background-position: 0 0; }
+}
+
+@keyframes shine-effect {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+  50% { box-shadow: 0 0 10px rgba(79, 70, 229, 0.5); }
+  100% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+}
+
+/* Error details styling */
+.error-details {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.error-details h4 {
+  color: var(--error);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.error-message {
+  font-family: monospace;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  overflow-x: auto;
+  color: var(--text-secondary);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .status-card {
+    padding: 0.75rem;
+  }
+  
+  .processing-step {
+    padding: 0.5rem;
+  }
+  
+  .step-icon {
+    min-width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  
+  .step-title {
+    font-size: 0.875rem;
+  }
+  
+  .step-description {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .status-card {
+    padding: 0.5rem;
+  }
+  
+  .status-icon-container {
+    width: 38px;
+    height: 38px;
+    margin-right: 0.75rem;
+  }
+  
+  .status-title {
+    font-size: 1.25rem;
+  }
+  
+  .status-message {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Improved Text visibility fixes for ProcessingStatus component */
+.visible-status-message {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-time-remaining {
+  color: var(--text-secondary, #cbd5e1) !important;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.visible-step-title {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-step-description {
+  color: var(--text-secondary, #cbd5e1) !important;
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+/* Improved step background colors */
+.step-color-1-bg {
+  background-color: rgba(96, 165, 250, 0.2) !important; /* Blue with opacity */
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background-color: rgba(167, 139, 250, 0.2) !important; /* Purple with opacity */
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background-color: rgba(249, 115, 22, 0.2) !important; /* Orange with opacity */
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background-color: rgba(16, 185, 129, 0.2) !important; /* Green with opacity */
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Add a stable layout for the processing steps */
+.processing-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.processing-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background-color: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s ease;
+}
+
+.processing-step.active {
+  background-color: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  background-color: rgba(30, 41, 59, 0.5);
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary, #f8fafc);
+}
+
+.step-description {
+  font-size: 0.875rem;
+  color: var(--text-secondary, #cbd5e1);
+  opacity: 0.9;
+}
+
+/* Step colors */
+.step-color-1 {
+  color: #60a5fa; /* Blue */
+}
+
+.step-color-2 {
+  color: #a78bfa; /* Purple */
+}
+
+.step-color-3 {
+  color: #fb7185; /* Pink */
+}
+
+.step-color-4 {
+  color: #34d399; /* Green */
+}
+
+.step-color-1-bg {
+  background: rgba(96, 165, 250, 0.2);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background: rgba(167, 139, 250, 0.2);
+  color: #a78bfa;
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background: rgba(249, 115, 22, 0.2);
+  color: #fb7185;
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Animation keyframes */
+@keyframes progress-bar-stripes {
+  from { background-position: 28px 0; }
+  to { background-position: 0 0; }
+}
+
+@keyframes shine-effect {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+  50% { box-shadow: 0 0 10px rgba(79, 70, 229, 0.5); }
+  100% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+}
+
+/* Error details styling */
+.error-details {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.error-details h4 {
+  color: var(--error);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.error-message {
+  font-family: monospace;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  overflow-x: auto;
+  color: var(--text-secondary);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .status-card {
+    padding: 0.75rem;
+  }
+  
+  .processing-step {
+    padding: 0.5rem;
+  }
+  
+  .step-icon {
+    min-width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  
+  .step-title {
+    font-size: 0.875rem;
+  }
+  
+  .step-description {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .status-card {
+    padding: 0.5rem;
+  }
+  
+  .status-icon-container {
+    width: 38px;
+    height: 38px;
+    margin-right: 0.75rem;
+  }
+  
+  .status-title {
+    font-size: 1.25rem;
+  }
+  
+  .status-message {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Improved Text visibility fixes for ProcessingStatus component */
+.visible-status-message {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-time-remaining {
+  color: var(--text-secondary, #cbd5e1) !important;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.visible-step-title {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-step-description {
+  color: var(--text-secondary, #cbd5e1) !important;
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+/* Improved step background colors */
+.step-color-1-bg {
+  background-color: rgba(96, 165, 250, 0.2) !important; /* Blue with opacity */
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background-color: rgba(167, 139, 250, 0.2) !important; /* Purple with opacity */
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background-color: rgba(249, 115, 22, 0.2) !important; /* Orange with opacity */
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background-color: rgba(16, 185, 129, 0.2) !important; /* Green with opacity */
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Add a stable layout for the processing steps */
+.processing-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.processing-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background-color: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s ease;
+}
+
+.processing-step.active {
+  background-color: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  background-color: rgba(30, 41, 59, 0.5);
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary, #f8fafc);
+}
+
+.step-description {
+  font-size: 0.875rem;
+  color: var(--text-secondary, #cbd5e1);
+  opacity: 0.9;
+}
+
+/* Step colors */
+.step-color-1 {
+  color: #60a5fa; /* Blue */
+}
+
+.step-color-2 {
+  color: #a78bfa; /* Purple */
+}
+
+.step-color-3 {
+  color: #fb7185; /* Pink */
+}
+
+.step-color-4 {
+  color: #34d399; /* Green */
+}
+
+.step-color-1-bg {
+  background: rgba(96, 165, 250, 0.2);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background: rgba(167, 139, 250, 0.2);
+  color: #a78bfa;
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background: rgba(249, 115, 22, 0.2);
+  color: #fb7185;
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Animation keyframes */
+@keyframes progress-bar-stripes {
+  from { background-position: 28px 0; }
+  to { background-position: 0 0; }
+}
+
+@keyframes shine-effect {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+  50% { box-shadow: 0 0 10px rgba(79, 70, 229, 0.5); }
+  100% { box-shadow: 0 0 0 rgba(79, 70, 229, 0); }
+}
+
+/* Error details styling */
+.error-details {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.error-details h4 {
+  color: var(--error);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.error-message {
+  font-family: monospace;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  overflow-x: auto;
+  color: var(--text-secondary);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .status-card {
+    padding: 0.75rem;
+  }
+  
+  .processing-step {
+    padding: 0.5rem;
+  }
+  
+  .step-icon {
+    min-width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  
+  .step-title {
+    font-size: 0.875rem;
+  }
+  
+  .step-description {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .status-card {
+    padding: 0.5rem;
+  }
+  
+  .status-icon-container {
+    width: 38px;
+    height: 38px;
+    margin-right: 0.75rem;
+  }
+  
+  .status-title {
+    font-size: 1.25rem;
+  }
+  
+  .status-message {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Improved Text visibility fixes for ProcessingStatus component */
+.visible-status-message {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-time-remaining {
+  color: var(--text-secondary, #cbd5e1) !important;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.visible-step-title {
+  color: var(--text-primary, #f8fafc) !important;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.visible-step-description {
+  color: var(--text-secondary, #cbd5e1) !important;
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+/* Improved step background colors */
+.step-color-1-bg {
+  background-color: rgba(96, 165, 250, 0.2) !important; /* Blue with opacity */
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background-color: rgba(167, 139, 250, 0.2) !important; /* Purple with opacity */
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background-color: rgba(249, 115, 22, 0.2) !important; /* Orange with opacity */
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background-color: rgba(16, 185, 129, 0.2) !important; /* Green with opacity */
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Add a stable layout for the processing steps */
+.processing-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.processing-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background-color: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s ease;
+}
+
+.processing-step.active {
+  background-color: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  background-color: rgba(30, 41, 59, 0.5);
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary, #f8fafc);
+}
+
+.step-description {
+  font-size: 0.875rem;
+  color: var(--text-secondary, #cbd5e1);
+  opacity: 0.9;
+}
+
+/* Step colors */
+.step-color-1 {
+  color: #60a5fa; /* Blue */
+}
+
+.step-color-2 {
+  color: #a78bfa; /* Purple */
+}
+
+.step-color-3 {
+  color: #fb7185; /* Pink */
+}
+
+.step-color-4 {
+  color: #34d399; /* Green */
+}
+
+.step-color-1-bg {
+  background: rgba(96, 165, 250, 0.2);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.step-color-2-bg {
+  background: rgba(167, 139, 250, 0.2);
+  color: #a78bfa;
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.step-color-3-bg {
+  background: rgba(249, 115, 22, 0.2);
+  color: #fb7185;
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.step-color-4-bg {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Animation keyframes */
+@keyframes progress-bar-stripes {
+  from { background-position: 28px 0; }
+  to { background-position: 0 0; }
+}
