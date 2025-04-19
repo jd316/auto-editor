@@ -2,6 +2,19 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  images: {
+    domains: ['localhost'],
+  },
+  // Optimize CSS and minify it in production
+  compiler: {
+    // Remove console logs in production
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+  // Configure CSS optimization
+  optimizeCss: true,
+  experimental: {
+    optimizeCss: true,
+  },
   async rewrites() {
     return [
       {

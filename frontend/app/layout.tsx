@@ -2,10 +2,7 @@
 
 import { Inter, Poppins } from 'next/font/google'
 import 'bootstrap/dist/css/bootstrap.css'
-import './globals.css'
-import './additional-styles.css'
-import './how-it-works.css'
-import './navbar-fix.css'
+import '../styles/main.css'
 import React, { useState, useEffect, useRef } from 'react'
 import { AuthProvider, useAuth } from '../context/AuthContext'
 import Link from 'next/link'

@@ -23,6 +23,11 @@ interface ProgressInfo {
   formatted_remaining_time?: string;
 }
 
+// Keys for localStorage
+const STORAGE_KEY_JOB_ID = 'auto_editor_job_id';
+const STORAGE_KEY_JOB_STATUS = 'auto_editor_job_status';
+const STORAGE_KEY_DOWNLOAD_URL = 'auto_editor_download_url';
+
 export default function Home(): React.ReactElement {
   const { session, loading } = useAuth();
   const [jobStatus, setJobStatus] = useState<JobStatus>('queued');
@@ -31,6 +36,7 @@ export default function Home(): React.ReactElement {
   const [showForm, setShowForm] = useState(true);
   const [debugInfo, setDebugInfo] = useState<string | null>(null);
   const [progressInfo, setProgressInfo] = useState<ProgressInfo | null>(null);
+  const [currentJobId, setCurrentJobId] = useState<string | null>(null);
   
   // Ref to store the polling cancellation function
   const pollingCancelRef = useRef<(() => void) | null>(null);
@@ -41,6 +47,30 @@ export default function Home(): React.ReactElement {
     howItWorks: useRef<HTMLElement>(null),
     features: useRef<HTMLElement>(null)
   };
+
+  // Check localStorage for any ongoing jobs when component loads
+  useEffect(() => {
+    if (session && !loading) {
+      const storedJobId = localStorage.getItem(STORAGE_KEY_JOB_ID);
+      const storedJobStatus = localStorage.getItem(STORAGE_KEY_JOB_STATUS) as JobStatus | null;
+      const storedDownloadUrl = localStorage.getItem(STORAGE_KEY_DOWNLOAD_URL);
+      
+      if (storedJobId && storedJobStatus) {
+        console.log('Restoring job from localStorage:', storedJobId, storedJobStatus);
+        setCurrentJobId(storedJobId);
+        setJobStatus(storedJobStatus);
+        
+        if (storedJobStatus === 'completed' && storedDownloadUrl) {
+          setDownloadUrl(storedDownloadUrl);
+          setShowForm(false);
+        } else if (storedJobStatus === 'processing' || storedJobStatus === 'queued') {
+          setShowForm(false);
+          // Start polling again for this job
+          pollingCancelRef.current = startPolling(storedJobId);
+        }
+      }
+    }
+  }, [session, loading]);
 
   // Add scroll event listener for header scroll effect only
   useEffect(() => {
@@ -78,10 +108,17 @@ export default function Home(): React.ReactElement {
   
   // For testing/debugging - simulate a completed job
   const simulateCompletedJob = () => {
+    const testJobId = 'test-job-id';
     setJobStatus('completed');
     setDownloadUrl('/api/download/test-job-id');
     setShowForm(false);
     setDebugInfo('Using simulated completed job for testing');
+    setCurrentJobId(testJobId);
+    
+    // Store in localStorage
+    localStorage.setItem(STORAGE_KEY_JOB_ID, testJobId);
+    localStorage.setItem(STORAGE_KEY_JOB_STATUS, 'completed');
+    localStorage.setItem(STORAGE_KEY_DOWNLOAD_URL, '/api/download/test-job-id');
   };
 
   const handleUploadStart = async (formData: FormData): Promise<void> => {
@@ -96,6 +133,12 @@ export default function Home(): React.ReactElement {
       setJobStatus('queued');
       setDebugInfo(null);
       setProgressInfo(null);
+      setDownloadUrl(null);
+      
+      // Clear any previous job from localStorage
+      localStorage.removeItem(STORAGE_KEY_JOB_ID);
+      localStorage.removeItem(STORAGE_KEY_JOB_STATUS);
+      localStorage.removeItem(STORAGE_KEY_DOWNLOAD_URL);
       
       // Log the form data for debugging
       console.log('Form data keys:', Array.from(formData.keys()));
@@ -105,6 +148,11 @@ export default function Home(): React.ReactElement {
       
       console.log('Upload response:', data);
       setDebugInfo(`Job ID: ${data.job_id}, Status: ${data.status}`);
+      setCurrentJobId(data.job_id);
+      
+      // Store job ID in localStorage
+      localStorage.setItem(STORAGE_KEY_JOB_ID, data.job_id);
+      localStorage.setItem(STORAGE_KEY_JOB_STATUS, data.status);
       
       // Initialize progress info with estimate from server
       if (data.estimated_seconds) {
@@ -125,6 +173,12 @@ export default function Home(): React.ReactElement {
       setErrorMessage('Error uploading files');
       setJobStatus('failed');
       setDebugInfo(`Upload error: ${error instanceof Error ? error.message : String(error)}`);
+      
+      // Store failed status in localStorage
+      if (currentJobId) {
+        localStorage.setItem(STORAGE_KEY_JOB_STATUS, 'failed');
+      }
+      
       throw error; // Re-throw the error so the form can handle it
     }
   };
@@ -154,13 +208,21 @@ export default function Home(): React.ReactElement {
         // Update state with the latest status
         setJobStatus(statusData.status as JobStatus);
         
+        // Store status in localStorage
+        localStorage.setItem(STORAGE_KEY_JOB_STATUS, statusData.status);
+        
         // Update progress information if available
         if (statusData.progress) {
           setProgressInfo(statusData.progress);
         }
         
         if (statusData.status === 'completed') {
-          setDownloadUrl(statusData.download_url);
+          const downloadUrl = statusData.download_url || `/api/download/${jobId}`;
+          setDownloadUrl(downloadUrl);
+          
+          // Store download URL in localStorage
+          localStorage.setItem(STORAGE_KEY_DOWNLOAD_URL, downloadUrl);
+          
           // We can stop polling now
           return;
         } else if (statusData.status === 'failed') {
@@ -202,6 +264,12 @@ export default function Home(): React.ReactElement {
     setShowForm(true);
     setDebugInfo(null);
     setProgressInfo(null);
+    setCurrentJobId(null);
+    
+    // Clear localStorage
+    localStorage.removeItem(STORAGE_KEY_JOB_ID);
+    localStorage.removeItem(STORAGE_KEY_JOB_STATUS);
+    localStorage.removeItem(STORAGE_KEY_DOWNLOAD_URL);
   };
 
   // For development/testing only
@@ -225,7 +293,8 @@ export default function Home(): React.ReactElement {
   useEffect(() => {
     if (session) {
         // Reset state when user logs in
-        handleStartOver(); // Use handleStartOver to reset job state and show form
+        // We don't want to clear localStorage here to preserve any ongoing jobs
+        // That's handled by the first useEffect that checks localStorage
     } else {
         // Ensure form isn't shown if logged out, cancel polling
         setShowForm(false);
@@ -239,6 +308,12 @@ export default function Home(): React.ReactElement {
         setDownloadUrl(null);
         setProgressInfo(null);
         setDebugInfo(null);
+        setCurrentJobId(null);
+        
+        // Clear localStorage when logging out
+        localStorage.removeItem(STORAGE_KEY_JOB_ID);
+        localStorage.removeItem(STORAGE_KEY_JOB_STATUS);
+        localStorage.removeItem(STORAGE_KEY_DOWNLOAD_URL);
     }
   }, [session]);
 

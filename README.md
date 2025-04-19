@@ -9,6 +9,7 @@ Auto-Editor is an AI-powered video editing application that automatically proces
 - **GPU Acceleration**: Utilizes GPU for faster processing when available
 - **Real-time Progress Tracking**: Provides detailed status updates during processing
 - **Modern UI**: Responsive, user-friendly interface built with Next.js
+- **Optimized Performance**: Consolidated CSS for faster loading and better performance
 
 ## Project Structure
 
